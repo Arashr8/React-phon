@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import Phone from './Components/Phone';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+    state = {
+        phones : [
+            { model: 'Nokia', color : 'green' , price : 100 } ,
+            { model: 'LG', color : 'yellow' , price : 200 } ,
+            { model: 'samsung', color : 'brown' , price : 300 }
+        ]
+    }
+render() {
+    const {phones} = this.state
+    return (
+        <div>
+        {phones.map(phone => (
+<Phone model={phone.model}  color={phone.color}  price={phone.price}/>
+        ))}
+        </div>
+    )
 }
 
-export default App;
+}
+
+export default App
