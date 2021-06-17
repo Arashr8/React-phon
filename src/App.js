@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import Phone from './Components/Phone';
+import Phones from './Components/Phones';
+
 
 
 class App extends Component {
@@ -14,9 +15,7 @@ render() {
     const {phones} = this.state
     return (
         <div>
-        {phones.map(phone => (
-<Phone model={phone.model}  color={phone.color}  price={phone.price}/>
-        ))}
+       <Phones phones={phones}/>
         </div>
     )
 }
