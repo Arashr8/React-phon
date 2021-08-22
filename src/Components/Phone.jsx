@@ -1,13 +1,36 @@
+// import React, { Component } from 'react'
 import React from 'react'
 
-const Phone = ({model,color,price}) => {
+// class Phone extends Component {
+//     render(){
+//         return (
+//             <div>
+//                 <h5>
+//                     Bye
+//                 </h5>
+//             </div>
+//         )
+//     }
+// }
+
+// export default Phone
+
+// function Phone() {
+//     return (
+//         <div>
+//             <h5>
+//                 Yes
+//             </h5>
+//         </div>
+//     )
+// }
+
+const Phone  = () => {
     return (
         <div>
-            <h3>model is {`${model}`} color is {`${color}`} price is {`${price}`}</h3>
+            <h5></h5>
         </div>
     )
-
-    
 }
 
 export default Phone
