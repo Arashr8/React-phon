@@ -1,123 +1,54 @@
 
 import React, { Component } from "react"
 import './App.css'
-import Product from "./components/Product"
+import Car from "./components/Car"
 
 class App extends Component {
     constructor (){
         super()
-        // this.state = {
-        // products : [
-        // {name:'TV' , color : 'Red' , price : '150' , quantity : '30' },
-        // {name:'Mobile' , color : 'White' , price : '200' , quantity : '10' },
-        // {name:'Lap top' , color : 'Black' , price : '110' , quantity : '11' },
-        // ],
-
-        // color : 'white' , 
-        // firstName : 'hassan',
-        // typeName : 'number'
-        // hFiveTag : '<h5>salam</h5>',
-
-    //     bgColor1 : 'white' ,
-    //     bgColor2 : 'white' ,
-    //     bgColor3 : 'white'
-
-    //   } 
+     
     }
     state = {
-        bgColor1 : 'white' ,
-        bgColor2 : 'white' ,
-        bgColor3 : 'white'
+        cars : [
+            {name : 'bmw' , color : 'red' , year :'2010'} ,
+            {name : 'benz' , color : 'black' , year :'2005'} ,
+            {name : 'audi' , color : 'green' , year :'2020'}
+        ]
     }
-    // onChangeBakgroundColor = () => {
-    //    this.setState({ color: 'red'})
-    // }
-    // onChangeName = () => {
-    //    this.setState ({firstName : 'ali'})
-    // }
-    // onChangeType = () => {
-    //     this.setState ( { typeName : 'email' } )
-    // }
-    // onChangeTag = () => {
-    //     this.setState ({
-    //         hFiveTag : '<h1>salam</h1>'
-    //     })
 
-    // }
-
-    // onChangeBgColorToGreen = () => {
-    //     this.setState ({
-    //         bgColor  : 'green'
-    //     }
-
-    //     )
-    // }
-    
-    // onChangeBgColorToRed = () => {
-    //     this.setState ({
-    //         bgColor : 'red'
-    //     })
-    // }
-    // onChangeBgColorToWhite = () => {
-    //     this.setState ({
-    //         bgColor : 'white'
-    //     })
-    // }
-    
-    
-    onChangeToGreen = () => {
+    changeCars = () => {
         this.setState ({
-            bgColor1 : 'green' ,
-            bgColor2 : 'white' ,
-            bgColor3 : 'white'
+            cars : [
+                {name : 'peykan' , color : 'blue' , year :'2011'} ,
+                {name : 'pride' , color : 'brown' , year :'2007'} ,
+                {name : 'smand' , color : 'yellow' , year :'2018'}
+            ]
         })
     }
-
-    onChangeToYellow = () => {
+   
+    changeCarsToDefault = () => {
         this.setState ({
-            bgColor2 : 'yellow' ,
-            bgColor1 : 'white' ,
-            bgColor3 : 'white'
+            cars : [
+                {name : 'bmw' , color : 'red' , year :'2010'} ,
+                {name : 'benz' , color : 'black' , year :'2005'} ,
+                {name : 'audi' , color : 'green' , year :'2020'}
+            ]
         })
     }
-
-    onChangeToRed = () => {
-       this.setState ({
-            bgColor3 : 'red' ,
-            bgColor2 : 'white' ,
-            bgColor1: 'white'
-
-})
-    }
-
 
      render () {
+
+        const {cars} = this.state
         return(
 
-            <div >
-            
-             {/* { this.state.products.map(product =>(
-              <Product name = {product.name} color = {product.color} price = {product.price} quantity = {product.quantity}/>
-             )) 
-               }
-               <button onClick= {this.onChangeBakgroundColor}>change color</button>
-               <div> { this.state.firstName } </div>
-               <button onClick= {this.onChangeName}>change name</button>
-               <input type= {this.state.typeName}/>
-               <button onClick= {this.onChangeType}>change type</button> */}
-            
-            {this.state.hFiveTag}
+            <div>
+                
+             {cars.map(car =>(
+             <Car name = {car.name} color = {car.color} year = {car.year}/>
 
-            {/* <button onClick = {this.onChangeBgColorToGreen}> Green </button>
-            <button onClick = {this. onChangeBgColorToRed}> Red </button>
-            <button onClick = {this.onChangeBgColorToWhite}> White </button> */}
-          
-            {/* <button onClick= {this.onChangeTag}> change text </button> */}
-
-            <div onClick = {this.onChangeToGreen} className = "bgGreen" style = {{ backgroundColor : this.state.bgColor1 }}></div> <br/>
-            <div onClick = {this.onChangeToYellow} className = "bgYellow" style = {{ backgroundColor : this.state.bgColor2 }}></div> <br/>
-            <div onClick = {this.onChangeToRed} className = "bgRed" style = {{ backgroundColor : this.state.bgColor3 }}></div>
-
+             ))}   
+             <button onClick = {this.changeCars}>change cars</button>
+             <button onClick = {this.changeCarsToDefault}>change cars</button>
             </div>
         )
     }
